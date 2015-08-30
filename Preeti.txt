@@ -1,0 +1,25 @@
+Java Interview Questions
+--------------------------
+
+Tell me about yourself?
+Tell me about your current application that you are testing?
+Tell me about your role in this project?
+Tell me how you built automation for any project?
+
+How do you rate your self in Java?
+Which Version of Java you used?
+What is the difference b/w JVM and JRE?
+What are the Object oriented concepts?
+What is encapsulation?
+What is overloading?
+What are the differences b/w abstract class and interface?
+Give an example for overloading and overriding?
+How do you handle exceptions?
+Give some sample exceptions you faced in your work?
+How do you manage test data?
+How to you read test data from whatever sources they have the data stored?
+What collections you used?
+What is the difference b/w Set and List?
+What is the difference b/w Array List and LinkedList?
+What is the difference b/w HashTable and HashMap?
+How do you synchronize a class or a piece of java program?
