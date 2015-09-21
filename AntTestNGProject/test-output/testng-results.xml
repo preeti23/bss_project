@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="84" started-at="2015-09-17T22:22:30Z" finished-at="2015-09-17T22:22:30Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="84" started-at="2015-09-17T22:22:30Z" finished-at="2015-09-17T22:22:30Z">
+      <class name="com.test.TestCalcMultTestng">
+        <test-method status="PASS" signature="testMult()[pri:0, instance:com.test.TestCalcMultTestng@465648]" name="testMult" duration-ms="3" started-at="2015-09-17T15:22:30Z" finished-at="2015-09-17T15:22:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMult -->
+      </class> <!-- com.test.TestCalcMultTestng -->
+      <class name="com.test.TestCalcAddTestng">
+        <test-method status="PASS" signature="testAdd()[pri:0, instance:com.test.TestCalcAddTestng@5995ba]" name="testAdd" duration-ms="39" started-at="2015-09-17T15:22:30Z" finished-at="2015-09-17T15:22:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAdd -->
+      </class> <!-- com.test.TestCalcAddTestng -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,85 @@
+<project name="SampleJUnitTests" default="run-tests" basedir=".">
+	<description>
+		Sample JUnit Tests
+	</description>
+	<!-- set global properties for this build -->
+
+	
+	<property name="project_name" value="junitSamples"/>
+	<property name="src" location="src"/>
+	<property name="basedir" location="." />
+	
+	<property name="build" location="bin"/>
+	<property name="dist"  location="dist"/>
+	<property name="lib"  location="lib"/>
+	<property name="res"  location="res"/>
+	<property name="reports" location="reports"/>
+
+	<!-- the names of various distributable files -->
+	<property name="jar_name" value="${project_name}.jar"/>
+	<property name="war_name" value="${project_name}.war"/>
+   
+    <taskdef name="testng" classname="org.testng.TestNGAntTask">
+    <classpath>
+      <pathelement location="lib/testng-6.8.jar"/>
+    </classpath>
+  	</taskdef>
+		
+	<!-- top level targets -->
+	
+	<!--  below is a way to build reusable class paths for  
+	here, we have lib for jara and bin for the location of classes -->
+	<path id="buildpath">  
+    <pathelement location="lib/"/>  
+    <pathelement location="${build}" />
+    
+  	</path> 
+  	
+  	
+	<target name="compile" depends="init" description="compile the source code " >
+			<javac includeantruntime="false" srcdir="${src}" destdir="${build}">
+				<classpath>
+					<fileset dir="lib">
+						<include name="**/*.jar"/>
+					</fileset>
+				</classpath>
+			</javac>
+	</target>
+
+	<target name="run-tests" depends="compile" description="run your test suite" >
+			
+			<testng classpathref="buildpath" suitename= "Suite" useDefaultListeners="true"
+	        outputDir="${reports}" haltOnfailure="false" >      
+	   			<xmlfileset dir="${src}" includes="testng.xml"/>
+			</testng>
+		</target>
+
+			  
+	<target name ="reports" depends="run-tests">
+		<junitreport todir="${reports}">
+		  <fileset dir="${reports}/junitreports/">
+		    <include name="TEST-*.xml"/>
+		  </fileset>
+		  <report format="frames" todir="${reports}/html/"/>
+		</junitreport>
+	</target>
+
+	<!-- supporting targets -->
+
+	<target name="init" description="initialize the build environment" >
+	    <!-- Create the time stamp -->
+	    <tstamp/>
+	    <!-- Create directory structures -->
+            <delete dir="${build}"/>	    
+            <delete dir="${dist}"/>	
+            <delete dir="${reports}"/>	
+        <mkdir dir="${build}"/>
+	    <mkdir dir="${dist}/lib"/>
+	    <mkdir dir="${reports}"/>
+	    <mkdir dir="${reports}/raw/"/>
+	    <mkdir dir="${reports}/html/"/>
+	</target>
+
+	
+</project>
+
